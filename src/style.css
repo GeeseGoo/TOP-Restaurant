@@ -4,13 +4,13 @@
 *,
 *::before,
 *::after {
-	box-sizing: border-box;
+  box-sizing: border-box;
 }
 /*
   2. Remove default margin
 */
 * {
-	margin: 0;
+  margin: 0;
 }
 /*
   Typographic tweaks!
@@ -18,8 +18,8 @@
   4. Improve text rendering
 */
 body {
-	line-height: 1.5;
-	-webkit-font-smoothing: antialiased;
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
 }
 /*
   5. Improve media defaults
@@ -29,8 +29,8 @@ picture,
 video,
 canvas,
 svg {
-	display: block;
-	max-width: 100%;
+  display: block;
+  max-width: 100%;
 }
 /*
   6. Remove built-in form typography styles
@@ -39,7 +39,7 @@ input,
 button,
 textarea,
 select {
-	font: inherit;
+  font: inherit;
 }
 /*
   7. Avoid text overflows
@@ -51,31 +51,31 @@ h3,
 h4,
 h5,
 h6 {
-	overflow-wrap: break-word;
+  overflow-wrap: break-word;
 }
 /*
   8. Create a root stacking context
 */
 #root,
 #__next {
-	isolation: isolate;
+  isolation: isolate;
 }
 :root {
-	--primary: #f7e1d7;
-	--secondary: #dbe2ef;
-	--accent1: #3f72af;
-	--accent2: #112d4e;
+  --primary: #f7e1d7;
+  --secondary: #dbe2ef;
+  --accent1: #3f72af;
+  --accent2: #112d4e;
 }
 
 @font-face {
-	font-family: "Groovy";
-	src: url("groovy.ttf") format("truetype");
-	font-weight: normal;
-	font-style: normal;
+  font-family: "Groovy";
+  src: url("groovy.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
 }
 
 body {
-	background-color: var(--primary);
+  background-color: var(--primary);
 }
 
 /* nav {
@@ -94,197 +94,327 @@ body {
 	}
 } */
 @keyframes rotate-shake {
-	0% {
-		transform: rotate(0deg);
-	}
-	10% {
-		transform: rotate(-30deg);
-	}
-	20% {
-		transform: rotate(30deg);
-	}
-	30% {
-		transform: rotate(-15deg);
-	}
-	40% {
-		transform: rotate(15deg);
-	}
-	50% {
-		transform: rotate(-10deg);
-	}
-	60% {
-		transform: rotate(10deg);
-	}
-	70%,
-	100% {
-		transform: rotate(0deg);
-	}
+  0% {
+    transform: rotate(0deg);
+  }
+  10% {
+    transform: rotate(-30deg);
+  }
+  20% {
+    transform: rotate(30deg);
+  }
+  30% {
+    transform: rotate(-15deg);
+  }
+  40% {
+    transform: rotate(15deg);
+  }
+  50% {
+    transform: rotate(-10deg);
+  }
+  60% {
+    transform: rotate(10deg);
+  }
+  70%,
+  100% {
+    transform: rotate(0deg);
+  }
 }
 
 nav {
-	display: flex;
-	gap: 80px;
-	padding: 0px 30px;
-	position: absolute;
-	width: 100%;
-	z-index: 10;
-	button {
-		border: none;
-		background: none;
-		padding: 10px 12px;
-		border-radius: 12px;
-		font-size: 2rem;
-		transition: 0.3s ease;
-	}
+  display: flex;
+  gap: 80px;
+  padding: 0px 30px;
+  position: fixed;
+  width: 100%;
+  z-index: 10;
+  button {
+    border: none;
+    background: none;
+    padding: 10px 12px;
+    border-radius: 12px;
+    font-size: 2rem;
+    transition: 0.3s ease;
+  }
 
-	button:hover {
-		animation: rotate-shake 0.5s ease-in-out;
-		cursor: pointer;
-		text-decoration-line: underline;
-	}
+  button:hover {
+    animation: rotate-shake 0.5s ease-in-out;
+    cursor: pointer;
+    text-decoration-line: underline;
+  }
 }
 
 .groovy {
-	font-family: Groovy, sans-serif;
+  font-family: Groovy, sans-serif;
 }
 
 .homepage h1 {
-	font-size: 13rem;
-	font-weight: 100;
-	text-align: center;
-	position: relative;
+  font-size: 13rem;
+  font-weight: 100;
+  text-align: center;
+  position: relative;
 }
 
 .welcome {
-	font-size: 2rem;
-	position: absolute;
-	left: -80px;
-	top: 0;
-	rotate: -30deg;
+  font-size: 2rem;
+  position: absolute;
+  left: -80px;
+  top: 0;
+  rotate: -30deg;
 }
 
 .cake-title {
-	position: relative;
+  position: relative;
 }
 
 .description {
-	display: flex;
-	width: 90%;
-	justify-content: center;
-	justify-content: space-between;
-	span {
-		font-size: 5rem;
-	}
+  display: flex;
+  width: 90%;
+  justify-content: center;
+  justify-content: space-between;
+  span {
+    font-size: 5rem;
+  }
 }
 
 .homepage {
-	width: 100vw;
-	height: 100vh;
-	display: flex;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
 
-	flex-direction: column;
-	justify-content: center;
-	align-items: center;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
 .home-cake {
-	height: 300px;
-	flex: 0 0 0;
-	margin-bottom: -100px;
-	margin-top: -100px;
+  height: 300px;
+  flex: 0 0 0;
+  margin-bottom: -100px;
+  margin-top: -100px;
 }
 
 .icing {
-	width: 100%;
-	height: 15vh;
-	display: block;
-	position: fixed;
-	background-color: pink;
+  width: 100%;
+  height: 15vh;
+  display: block;
+  position: fixed;
+  background-color: pink;
 }
 
 .icing.top {
-	--mask: radial-gradient(30px at 75% 100%, #0000 98%, #000) 50% calc(100% - 30px) / 120px 100% repeat-x,
-		radial-gradient(30px at 25% 50%, #000 99%, #0000 101%) bottom/120px 60px repeat-x;
-	-webkit-mask: var(--mask);
-	mask: var(--mask);
-	top: 0px;
+  --mask: radial-gradient(30px at 75% 100%, #0000 98%, #000) 50%
+      calc(100% - 30px) / 120px 100% repeat-x,
+    radial-gradient(30px at 25% 50%, #000 99%, #0000 101%) bottom/120px 60px
+      repeat-x;
+  -webkit-mask: var(--mask);
+  mask: var(--mask);
+  top: 0px;
 }
 
 .icing.bottom {
-	--mask: radial-gradient(30px at 25% 0, #0000 98%, #000) 50% 30px/120px 100% repeat-x,
-		radial-gradient(30px at 75% 50%, #000 99%, #0000 101%) top/120px 60px repeat-x;
-	-webkit-mask: var(--mask);
-	mask: var(--mask);
-	bottom: 0px;
+  --mask: radial-gradient(30px at 25% 0, #0000 98%, #000) 50% 30px/120px 100%
+      repeat-x,
+    radial-gradient(30px at 75% 50%, #000 99%, #0000 101%) top/120px 60px
+      repeat-x;
+  -webkit-mask: var(--mask);
+  mask: var(--mask);
+  bottom: 0px;
 }
 
 .logo {
-	display: flex;
-	margin-right: auto;
+  display: flex;
+  margin-right: auto;
 
-	img {
-		height: 80px;
-		margin-left: -20px;
-	}
+  img {
+    height: 80px;
+    margin-left: -20px;
+  }
 }
 
 footer {
-	position: absolute;
-	bottom: 10px;
-	width: 100%;
-	display: flex;
-	justify-content: center;
+  position: fixed;
+  bottom: 10px;
+  width: 100%;
+  display: flex;
+  justify-content: center;
 }
 
 @keyframes spin-in {
-	0% {
-		transform: rotate(0deg);
-	}
-	100% {
-		transform: rotate(1800deg);
-	}
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(1800deg);
+  }
 }
 .animate.spin-in {
-	animation: spin-in 2s forwards;
+  animation: spin-in 2s forwards;
 }
 
 @keyframes bounce-during {
-	0% {
-		transform: translateY(0);
-	}
-	100% {
-		transform: translateY(-70px);
-	}
+  0% {
+    transform: translateY(0);
+  }
+  100% {
+    transform: translateY(-70px);
+  }
 }
 
 @keyframes bounce-in {
-	0% {
-		transform: translateY(-100vh);
-	}
-	100% {
-		transform: translateY(0px);
-	}
+  0% {
+    transform: translateY(-100vh);
+  }
+  100% {
+    transform: translateY(0px);
+  }
 }
 
 .homepage .bounce-in,
 .bounce-during {
-	transform: translateY(-100vh);
+  transform: translateY(-100vh);
 }
 .animate.bounce-in {
-	animation: bounce-in 1s ease-out 2.5s forwards;
+  animation: bounce-in 1s ease-out 2.5s forwards;
 }
 
 .animate.bounce-during:nth-child(1) {
-	animation: bounce-in 1s ease-out 4s forwards,
-		bounce-during 0.5s cubic-bezier(0.36, 0.07, 0.19, 0.97) alternate infinite 7s;
+  animation: bounce-in 1s ease-out 4s forwards,
+    bounce-during 0.5s cubic-bezier(0.36, 0.07, 0.19, 0.97) alternate infinite
+      7s;
 }
 
 .animate.bounce-during:nth-child(2) {
-	animation: bounce-in 1s ease-out 5s forwards,
-		bounce-during 0.5s cubic-bezier(0.36, 0.07, 0.19, 0.97) alternate infinite 7.2s;
+  animation: bounce-in 1s ease-out 5s forwards,
+    bounce-during 0.5s cubic-bezier(0.36, 0.07, 0.19, 0.97) alternate infinite
+      7.2s;
 }
 
 .animate.bounce-during:nth-child(3) {
-	animation: bounce-in 1s ease-out 6s forwards,
-		bounce-during 0.5s cubic-bezier(0.36, 0.07, 0.19, 0.97) alternate infinite 7.4s;
+  animation: bounce-in 1s ease-out 6s forwards,
+    bounce-during 0.5s cubic-bezier(0.36, 0.07, 0.19, 0.97) alternate infinite
+      7.4s;
+}
+
+.menu-page {
+  display: grid;
+  place-content: center;
+  padding-top: 200px;
+  padding-bottom: 200px;
+  opacity: 0;
+  animation: fade-in 1s forwards;
+  img {
+    border-radius: 20px;
+  }
+  .menu {
+    display: grid;
+    grid-template-rows: 1fr 1fr 1fr;
+    gap: 50px;
+    width: 800px;
+  }
+
+  img {
+    width: min(400px, 100vw);
+    height: min(400px, 100vw);
+    object-fit: cover;
+  }
+
+  .dish {
+    display: flex;
+    transition: 0.5s ease;
+    gap: 50px;
+    align-items: center;
+    border-radius: 20px;
+    background-color: #cdb4db;
+    padding: 25px;
+    font-family: "Varela Round", sans-serif;
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px,
+      rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px,
+      rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+
+    span {
+      font-size: 0.8rem;
+    }
+  }
+
+  .dish:hover {
+    scale: 1.1;
+  }
+}
+
+@keyframes fade-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@import url("https://fonts.googleapis.com/css2?family=Varela+Round&display=swap");
+
+.contact-page {
+  height: 100vh;
+  display: grid;
+  place-content: center;
+  button {
+    transition: 0.3s ease;
+  }
+
+  button:hover {
+    scale: 1.1;
+    cursor: pointer;
+  }
+
+  button:active {
+    rotate: 180deg;
+  }
+}
+
+@media screen and (max-width: 1200px) {
+  #content {
+    padding-top: 100px;
+    padding-bottom: 100px;
+  }
+  .cake-title h1 {
+    margin-top: 40px;
+    font-size: 4rem;
+  }
+
+  .description {
+    flex-direction: column;
+    align-items: center;
+    gap: 50px;
+    span {
+      font-size: 3rem;
+    }
+  }
+
+  nav {
+    gap: 0px;
+    justify-content: space-between;
+    margin: 0px;
+    .logo {
+      display: none;
+      margin: 0px;
+    }
+    button {
+      padding: 0px;
+    }
+  }
+  .logo-text span {
+    font-size: 0.5rem;
+  }
+
+  .welcome {
+    left: -30px;
+  }
+
+  .dish {
+    flex-direction: column;
+  }
+
+  .menu {
+    width: 100vw !important;
+  }
 }

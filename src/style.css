@@ -1,0 +1,290 @@
+/*
+  1. Use a more-intuitive box-sizing model.
+*/
+*,
+*::before,
+*::after {
+	box-sizing: border-box;
+}
+/*
+  2. Remove default margin
+*/
+* {
+	margin: 0;
+}
+/*
+  Typographic tweaks!
+  3. Add accessible line-height
+  4. Improve text rendering
+*/
+body {
+	line-height: 1.5;
+	-webkit-font-smoothing: antialiased;
+}
+/*
+  5. Improve media defaults
+*/
+img,
+picture,
+video,
+canvas,
+svg {
+	display: block;
+	max-width: 100%;
+}
+/*
+  6. Remove built-in form typography styles
+*/
+input,
+button,
+textarea,
+select {
+	font: inherit;
+}
+/*
+  7. Avoid text overflows
+*/
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+	overflow-wrap: break-word;
+}
+/*
+  8. Create a root stacking context
+*/
+#root,
+#__next {
+	isolation: isolate;
+}
+:root {
+	--primary: #f7e1d7;
+	--secondary: #dbe2ef;
+	--accent1: #3f72af;
+	--accent2: #112d4e;
+}
+
+@font-face {
+	font-family: "Groovy";
+	src: url("groovy.ttf") format("truetype");
+	font-weight: normal;
+	font-style: normal;
+}
+
+body {
+	background-color: var(--primary);
+}
+
+/* nav {
+	display: flex;
+	width: 100%;
+	justify-content: center;
+	gap: 100px;
+	margin-top: 200px;
+	position: absolute;
+
+	button {
+		border: none;
+		background: none;
+		padding: 10px 12px;
+		border-radius: 12px;
+	}
+} */
+@keyframes rotate-shake {
+	0% {
+		transform: rotate(0deg);
+	}
+	10% {
+		transform: rotate(-30deg);
+	}
+	20% {
+		transform: rotate(30deg);
+	}
+	30% {
+		transform: rotate(-15deg);
+	}
+	40% {
+		transform: rotate(15deg);
+	}
+	50% {
+		transform: rotate(-10deg);
+	}
+	60% {
+		transform: rotate(10deg);
+	}
+	70%,
+	100% {
+		transform: rotate(0deg);
+	}
+}
+
+nav {
+	display: flex;
+	gap: 80px;
+	padding: 0px 30px;
+	position: absolute;
+	width: 100%;
+	z-index: 10;
+	button {
+		border: none;
+		background: none;
+		padding: 10px 12px;
+		border-radius: 12px;
+		font-size: 2rem;
+		transition: 0.3s ease;
+	}
+
+	button:hover {
+		animation: rotate-shake 0.5s ease-in-out;
+		cursor: pointer;
+		text-decoration-line: underline;
+	}
+}
+
+.groovy {
+	font-family: Groovy, sans-serif;
+}
+
+.homepage h1 {
+	font-size: 13rem;
+	font-weight: 100;
+	text-align: center;
+	position: relative;
+}
+
+.welcome {
+	font-size: 2rem;
+	position: absolute;
+	left: -80px;
+	top: 0;
+	rotate: -30deg;
+}
+
+.cake-title {
+	position: relative;
+}
+
+.description {
+	display: flex;
+	width: 90%;
+	justify-content: center;
+	justify-content: space-between;
+	span {
+		font-size: 5rem;
+	}
+}
+
+.homepage {
+	width: 100vw;
+	height: 100vh;
+	display: flex;
+
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+}
+
+.home-cake {
+	height: 300px;
+	flex: 0 0 0;
+	margin-bottom: -100px;
+	margin-top: -100px;
+}
+
+.icing {
+	width: 100%;
+	height: 15vh;
+	display: block;
+	position: fixed;
+	background-color: pink;
+}
+
+.icing.top {
+	--mask: radial-gradient(30px at 75% 100%, #0000 98%, #000) 50% calc(100% - 30px) / 120px 100% repeat-x,
+		radial-gradient(30px at 25% 50%, #000 99%, #0000 101%) bottom/120px 60px repeat-x;
+	-webkit-mask: var(--mask);
+	mask: var(--mask);
+	top: 0px;
+}
+
+.icing.bottom {
+	--mask: radial-gradient(30px at 25% 0, #0000 98%, #000) 50% 30px/120px 100% repeat-x,
+		radial-gradient(30px at 75% 50%, #000 99%, #0000 101%) top/120px 60px repeat-x;
+	-webkit-mask: var(--mask);
+	mask: var(--mask);
+	bottom: 0px;
+}
+
+.logo {
+	display: flex;
+	margin-right: auto;
+
+	img {
+		height: 80px;
+		margin-left: -20px;
+	}
+}
+
+footer {
+	position: absolute;
+	bottom: 10px;
+	width: 100%;
+	display: flex;
+	justify-content: center;
+}
+
+@keyframes spin-in {
+	0% {
+		transform: rotate(0deg);
+	}
+	100% {
+		transform: rotate(1800deg);
+	}
+}
+.animate.spin-in {
+	animation: spin-in 2s forwards;
+}
+
+@keyframes bounce-during {
+	0% {
+		transform: translateY(0);
+	}
+	100% {
+		transform: translateY(-70px);
+	}
+}
+
+@keyframes bounce-in {
+	0% {
+		transform: translateY(-100vh);
+	}
+	100% {
+		transform: translateY(0px);
+	}
+}
+
+.homepage .bounce-in,
+.bounce-during {
+	transform: translateY(-100vh);
+}
+.animate.bounce-in {
+	animation: bounce-in 1s ease-out 2.5s forwards;
+}
+
+.animate.bounce-during:nth-child(1) {
+	animation: bounce-in 1s ease-out 4s forwards,
+		bounce-during 0.5s cubic-bezier(0.36, 0.07, 0.19, 0.97) alternate infinite 7s;
+}
+
+.animate.bounce-during:nth-child(2) {
+	animation: bounce-in 1s ease-out 5s forwards,
+		bounce-during 0.5s cubic-bezier(0.36, 0.07, 0.19, 0.97) alternate infinite 7.2s;
+}
+
+.animate.bounce-during:nth-child(3) {
+	animation: bounce-in 1s ease-out 6s forwards,
+		bounce-during 0.5s cubic-bezier(0.36, 0.07, 0.19, 0.97) alternate infinite 7.4s;
+}
